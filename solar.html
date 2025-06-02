@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <title>Solar System</title>
+    <link rel="icon" href="images/logo.png">
+
+    <style>
+        @font-face {
+            font-family: prompt;
+            src: url(fonts/Prompt-Light.ttf);
+        }
+
+        @font-face {
+            font-family: sansserifbook;
+            src: url(fonts/SansSerifBookFLF.otf);
+        }
+
+        * {
+            font-family: sansserifbook;
+            color: white;
+        }
+
+        main {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.95)), url("images/2k_stars_milky_way.jpg");
+            height: 1200px;
+            background-size:cover;
+            background-repeat: repeat;
+    animation: driftBackground 40s linear infinite;
+}
+
+@keyframes driftBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+        main h1 {
+            font-size: 100px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        main h3 {
+            color: #af8650;
+            text-align: center;
+            animation: shakeIt 2s ease-in infinite;
+            font-size: 25px;
+            font-weight: bold;
+            margin-top: 50px;
+        }
+
+        @keyframes shakeIt {
+            0% {
+                animation-timing-function: ease-out;
+                transform: scale(1);
+                transform-origin: center center;
+            }
+
+            10% {
+                animation-timing-function: ease-in;
+                transform: scale(0.91);
+            }
+
+            17% {
+                animation-timing-function: ease-out;
+                transform: scale(0.98);
+            }
+
+            33% {
+                animation-timing-function: ease-in;
+                transform: scale(0.87);
+            }
+
+            45% {
+                animation-timing-function: ease-out;
+                transform: scale(1);
+            }
+        }
+
+        main p {
+            font-size: 16px;
+            font-weight: lighter;
+            opacity: 0.6;
+            font-family: prompt;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 0px 0px 0px;
+            margin: 0px 50px;
+        }
+
+        header img {
+            margin: 0px 20px;
+        }
+
+        nav {
+            margin: 0px 0px;
+        }
+
+        ul {
+            display: flex;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        li a {
+            color: white;
+            text-decoration: none;
+            padding: 20px;
+            font-size: 20px;
+            font-weight: 100;
+            transition: all 0.5s ease 0s;
+        }
+
+        li a:hover {
+            color: #af8650;
+        }
+
+        .container-solarsystem {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0px;
+        }
+
+        .container-solarsystem model-viewer {
+            filter: saturate(120%);
+            margin: 0px 10px;
+            transition: all 0.5s ease 0s;
+        }
+
+        .container-solarsystem model-viewer:hover {
+            transform: scale(1.2);
+        }
+
+        .sun model-viewer:hover {
+            transform: scale(1.1);
+        }
+
+        .earth model-viewer:hover {
+            transform: scale(1.2), rotate(-40deg);
+        }
+
+        .sun model-viewer {
+            height: 450px;
+            width: 450px;
+        }
+
+        .mercury model-viewer {
+            height: 50px;
+            width: 50px;
+        }
+
+        .venus model-viewer {
+            height: 80px;
+            width: 80px;
+        }
+
+        .earth model-viewer {
+            height: 80px;
+            width: 80px;
+        }
+
+        .mars model-viewer {
+            height: 40px;
+            width: 40px;
+        }
+
+        .jupiter model-viewer {
+            filter: saturate(200%);
+            height: 250px;
+            width: 250px;
+        }
+
+        .saturn model-viewer {
+            filter: saturate(200%);
+            transform: rotate(-40deg);
+            height: 300px;
+            width: 300px;
+        }
+
+        .uranus model-viewer {
+            filter: saturate(200%);
+            height: 110px;
+            width: 110px;
+        }
+
+        .neptune model-viewer {
+            filter: saturate(200%);
+            height: 110px;
+            width: 110px;
+        }
+
+       .container-solar {
+    height: 800px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.95)), url(images/2k_stars.jpg);
+    padding: 20px 0px;
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: starDrift 60s linear infinite;
+}
+
+@keyframes starDrift {
+    0% {
+        background-position: center center;
+    }
+    100% {
+        background-position: center top;
+    }
+}
+
+        .container-solar h1 
+        {
+            font-size: 100px;
+            font-weight: bold;
+        }
+
+        .container-solar p {
+            font-family: prompt;
+            width: 500px;
+            margin: 20px 0px;
+        }
+
+        .container-solar h3 {
+            font-family: prompt;
+            padding-top: 50px;
+            font-size: 25px;
+            color: #af8650;
+        }
+
+        .card-solar {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .content-sun {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            background-image: linear-gradient(30deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 1)), url(images/2k_sun.jpg);
+            height: 800px;
+            width: 500px;
+            background-size: cover;
+            margin-right: 50px;
+        }
+
+        .content-mercury {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            background-image: linear-gradient(30deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 1)), url(images/2k_mercury.jpg);
+            height: 800px;
+            width: 500px;
+            background-size: cover;
+            margin-right: 50px;
+        }
+
+        .content-venus {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            background-image: linear-gradient(30deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 1)), url(images/2k_venus_surface.jpg);
+            height: 800px;
+            width: 500px;
+            background-size: cover;
+            margin-right: 50px;
+        }
+
+        .content-earth {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            background-image: linear-gradient(30deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 1)), url(images/2k_earth.jpg);
+            height: 800px;
+            width: 500px;
+            background-size: cover;
+            margin-right: 50px;
+        }
+
+        .content-mars {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            background-image: linear-gradient(30deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 1)), url(images/2k_mars.jpg);
+            height: 800px;
+            width: 500px;
+            background-size: cover;
+            margin-right: 50px;
+        }
+
+        .content-jupiter {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            background-image: linear-gradient(30deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 1)), url(images/2k_jupiter.jpg);
+            height: 800px;
+            width: 500px;
+            background-size: cover;
+            margin-right: 50px;
+        }
+
+        .content-saturn {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            background-image: linear-gradient(30deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 1)), url(images/2k_saturn.jpg);
+            height: 800px;
+            width: 500px;
+            background-size: cover;
+            margin-right: 50px;
+        }
+
+        .content-uranus {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            background-image: linear-gradient(30deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 1)), url(images/2k_uranus.jpg);
+            height: 800px;
+            width: 500px;
+            background-size: cover;
+            margin-right: 50px;
+        }
+
+        .content-neptune {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            background-image: linear-gradient(30deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 1)), url(images/2k_neptune.jpg);
+            height: 800px;
+            width: 500px;
+            background-size: cover;
+            margin-right: 50px;
+        }
+
+        .text-solar {
+            margin: 0px 20px;
+        }
+
+        .text-solar p {
+            font-size: 16px;
+        }
+
+        .info-solar {
+            display: flex;
+            justify-content: left;
+            margin: 50px 0px;
+        }
+
+        .info-solar div {
+            border: 0.1em solid white;
+            width: 220px;
+            padding: 10px;
+        }
+
+        .info-solar h6 {
+            font-family: prompt;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .info-solar p {
+            font-family: prompt;
+            font-size: 16px;
+        }
+
+        .img-solar {
+            border: 1px solid red;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .ref {
+            margin-top: 100px;
+            padding: 100px;
+        }
+
+        .ref span {
+            display: flex;
+        }
+
+        .ref h1 {
+            font-family: prompt;
+            font-weight: bold;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .ref p {
+            font-family: prompt;
+            font-size: 18px;
+        }
+
+        .ref a {
+            margin-left: 10px;
+            color: #af8650;
+            font-size: 16px;
+        }
+
+        footer {
+            background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url("images/earth-1365995_1920.jpg");
+            height: 350px;
+            margin: 0px;
+            background-position: center;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            animation: bgMove 80s linear infinite;
+        }
+        @keyframes bgMove {
+    0% {
+        background-position: center center;
+    }
+    50% {
+        background-position: center top;
+    }
+    100% {
+        background-position: center center;
+    }
+}
+
+        footer a {
+            opacity: 0.7;
+            color: #af8650;
+            font-family: prompt;
+            font-size: 16px;
+            margin-bottom: 50px;
+        }
+
+        footer a:hover {
+            color: lightgrey;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body style="background-color: black;">
+    <main>
+        <header>
+            <a href="index.html"><img src="images/Saturn-Transparent-Images.png" width="100px"
+                    title="Image by pngarts"></a>
+            <nav>
+                <ul>
+                    <li style="background-color: lightgrey; border-radius:
+                            50px"><a href="index.html" style="color: black;">Home</a></li>
+                    <li><a href="solar.html">Solar System</a></li>
+                    <li><a href="exploration.html">Exploration</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <h1>Solar System</h1>
+        <p>The star system that Earth is a part of
+            In the Milky Way Galaxy
+            There are planets and satellites orbiting around it</p>
+        <h3>Pick the one you want !</h3>
+        <div class="container-solarsystem">
+            <a href="#sun" class="sun">
+                <model-viewer src="assets/Sun.glb" alt="VR Headset" auto-rotate camera-controls ar
+                    ios-src="assets/sun.glb"></model-viewer>
+            </a>
+            <a href="#mercury" class="mercury">
+                <model-viewer src="assets/Mercury.glb" alt="VR Headset" auto-rotate camera-controls ar
+                    ios-src="assets/Mercury.glb"></model-viewer>
+            </a>
+            <a href="#venus" class="venus">
+                <model-viewer src="assets/Venus(surface).glb" alt="VR Headset" auto-rotate camera-controls ar
+                    ios-src="assets/Venus(surface).glb"></model-viewer>
+            </a>
+            <a href="#earth" class="earth">
+                <model-viewer src="assets/Earth.glb" alt="VR Headset" auto-rotate camera-controls ar
+                    ios-src="assets/Earth.glb"></model-viewer>
+            </a>
+            <a href="#mars" class="mars">
+                <model-viewer src="assets/Mars.glb" alt="VR Headset" auto-rotate camera-controls ar
+                    ios-src="assets/Mars.glb"></model-viewer>
+            </a>
+            <a href="#jupiter" class="jupiter">
+                <model-viewer src="assets/Jupiter.glb" alt="VR Headset" auto-rotate camera-controls ar
+                    ios-src="assets/Jupiter.glb"></model-viewer>
+                <a href="#saturn" class="saturn">
+                    <model-viewer src="assets/Saturn.glb" alt="VR Headset" auto-rotate camera-controls ar
+                        ios-src="assets/Saturn.glb"></model-viewer>
+                </a>
+                <a href="#uranus" class="uranus">
+                    <model-viewer src="assets/Uranus.glb" alt="VR Headset" auto-rotate camera-controls ar
+                        ios-src="assets/Uranus.glb"></model-viewer>
+                </a>
+                <a href="#neptune" class="neptune">
+                    <model-viewer src="assets/Neptune.glb" alt="VR Headset" auto-rotate camera-controls ar
+                        ios-src="assets/Neptune.glb"></model-viewer>
+                </a>
+        </div>
+    </main>
+
+    <section class="container-solar" id="sun">
+        <div class="content-sun">
+            <p></p>
+        </div>
+        <div>
+            <div class="card-solar">
+                <div class="text-solar">
+                    <h3>The sun</h3>
+                    <h1>Sun</h1>
+                    <p>The star at the center of the solar system
+                        has a diameter of 1.4
+                        million kilometers or 109 times the diameter of the Earth
+                        The Sun is 333,000 times more massive than Earth
+                        But only density
+                        0.25 times that of Earth
+                        Since the composition is hydrogen 74% helium 25%
+                        and other elements 1% </p>
+                </div>
+                <model-viewer src="assets/Sun.glb" alt="VR Headset" auto-rotate camera-controls ar
+                    ios-src="assets/sun.glb"
+                    style="width: 600px; height: 600px; filter: saturate(150%);"></model-viewer>
+            </div>
+            <div class="info-solar">
+                <div>
+                    <h6>diameter (Diameter)</h6>
+                    <p>1.4 million kilometers</p>
+                </div>
+                <div>
+                    <h6>the mass<br>(Mass)</h6>
+                    <p>1.9 million kilograms</p>
+                </div>
+                <div>
+                    <h6>Number of moons (Satellite)</h6>
+                    <p>0 horoscope</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-solar" id="mercury">
+        <div class="content-mercury">
+            <p></p>
+        </div>
+        <div>
+            <div class="card-solar">
+                <div class="text-solar">
+                    <h3>Mercury</h3>
+                    <h1>Mercury</h1>
+                    <p>The planets closest to the Sun are minor planets and have no moons
+                        Mercury's inner structure consists of a large iron core with a radius of about 1,800 to 1,900 kilometers.
+                       surrounded by a layer of silicates (in the same way that Earth's core is surrounded by mantle and crust)
+                        Which is only 500 to 600 kilometers thick, some of the core may still be molten</p>
+                    <p>Mercury does not have an atmosphere.Mercury is very close to the sun, so it has high temperatures during the day 430 °C
+                        But the night temperature only drops -180°C Temperature varies from day to night 610°C</p>
+                </div>
+                <model-viewer src="assets/Mercury.glb" alt="VR Headset" auto-rotate camera-controls ar
+                    ios-src="assets/Mercury.glb"
+                    style="width: 600px; height: 600px; filter: saturate(150%);"></model-viewer>
+            </div>
+            <div class="info-solar">
+                <div>
+                    <h6>diameter (Diameter)</h6>
+                    <p>4,880 kilometer</p>
+                </div>
+                <div>
+                    <h6>the mass<br>(Mass)</h6>
+                    <p>3.30E23 million kilograms</p>
+                </div>
+                <div>
+                    <h6>Number of moons (Satellite)</h6>
+                    <p>0 horoscope</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-solar" id="venus">
+        <div class="content-venus">
+            <p></p>
+        </div>
+        <div>
+            <div class="card-solar">
+                <div class="text-solar">
+                    <h3>Venus</h3>
+                    <h1>Venus</h1>
+                    <p>The 6th largest planet without a moon<br>Venus is similar in appearance to Earth.
+                        Known as the twin planet with our Earth, the inner structure of Venus consists of
+                        The iron core has a radius of about 3,000 km and is surrounded by a mantle layer that is about 3,000 km thick.
+                        Kilometers and solid crust composed of rock silicates</p>
+                </div>
+                <model-viewer src="assets/Venus(surface).glb" alt="VR Headset" auto-rotate camera-controls ar
+                    ios-src="assets/Venus(surface).glb"
+                    style="width: 600px; height: 600px; filter: saturate(150%);"></model-viewer>
+            </div>
+            <div class="info-solar">
+                <div>
+                    <h6>diameter (Diameter)</h6>
+                    <p>12,104 kilometers</p>
+                </div>
+                <div>
+                    <h6>the mass<br>(Mass)</h6>
+                    <p>4.87E24 million kilograms</p>
+                </div>
+                <div>
+                    <h6>Number of moons (Satellite)</h6>
+                    <p>0 horoscope</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-solar" id="earth">
+        <div class="content-earth">
+            <p></p>
+        </div>
+        <div>
+            <div class="card-solar">
+                <div class="text-solar">
+                    <h3>Star world</h3>
+                    <h1>Earth</h1>
+                    <p>It is the only planet in the solar system with an environment suitable for life
+                        Earth is 3rd in distance from the Sun and 3rd in size5
+                        The Earth is spherical in shape with an average radius of 6,371 kilometers</p>
+                    <p> Earth's inner structure consists of an iron core with a radius of about 1,200 km
+                        Encased in a liquid core consisting of iron and nickel with a thickness of about 2,200
+                       Kilometers up next is the mantle layer, which is made up of solid, soft, flexible plastic
+                        Iron, magnesium, silicon and other elements are about 3,000 kilometers thick.
+                        (Solid) consists mainly of feldspar and quartz (silicon dioxide).</p>
+                </div>
+                <model-viewer src="assets/Earth.glb" alt="VR Headset" auto-rotate camera-controls ar
+                    ios-src="assets/Earth.glb"
+                    style="width: 600px; height: 600px; filter: saturate(150%);"></model-viewer>
+            </div>
+            <div class="info-solar">
+                <div>
+                    <h6>diameter (Diameter)</h6>
+                    <p>12,756 kilometers</p>
+                </div>
+                <div>
+                    <h6>the mass<br>(Mass)</h6>
+                    <p>5.97E24 million kilograms</p>
+                </div>
+                <div>
+                    <h6>Number of moons (Satellite)</h6>
+                    <p>1 horoscope</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-solar" id="mars">
+        <div class="content-mars">
+            <p></p>
+        </div>
+        <div>
+            <div class="card-solar">
+                <div class="text-solar">
+                    <h3>Mars</h3>
+                    <h1>Mars</h1>
+                    <p>The planet farthest from the Sun is the 4th planet among all the planets
+                        Mars is about 0.5 times the diameter of Earth
+                        Mars has an internal structure consisting of a solid core with a radius of about 1,700 kilometers
+                       Covered by a magmatic mantle layer about 1,600 km thick and with a solid crust like Earth</p>
+                    <p>Mars is red because the surface consists of oxides of iron (rusty iron).
+                        The surface of Mars is dotted with many craters, including large craters called Valles Marineris.
+                        Marineris) is 4,000 km long, 600 km wide and 8 km deep
+                        Mars also has the highest volcano in the solar system called Mount Olympus.
+                        A 25 km spread base has a radius of 300 km</p>
+                </div>
+                <model-viewer src="assets/Mars.glb" alt="VR Headset" auto-rotate camera-controls ar
+                    ios-src="assets/Mars.glb"
+                    style="width: 600px; height: 600px; filter: saturate(150%);"></model-viewer>
+            </div>
+            <div class="info-solar">
+                <div>
+                    <h6>diameter (Diameter)</h6>
+                    <p>6,794 kilometers</p>
+                </div>
+                <div>
+                    <h6>the mass<br>(Mass)</h6>
+                    <p>6.42E23 million kilograms</p>
+                </div>
+                <div>
+                    <h6>Number of moons (Satellite)</h6>
+                    <p>2 horoscope</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-solar" id="jupiter">
+        <div class="content-jupiter">
+            <p></p>
+        </div>
+        <div>
+            <div class="card-solar">
+                <div class="text-solar">
+                    <h3>Jupiter</h3>
+                    <h1>Jupiter</h1>
+                    <p>The brightest object in the sky is the 4th largest after the Sun, Moon and Venus
+                        And known since prehistoric times, Jupiter was first explored by the spacecraft Pioneer
+                        10 Followed by Pioneer 11, Voyager 1, Voyager 2, Ulysses and Galileo in 2516</p>
+                    <p>Jupiter is a gas planet with a dense atmosphere composed mainly of 90% hydrogen and 10% helium.
+                        Mixed with methane, water and small amounts of ammonia
+                        Deep below is the outer mantle, which consists of liquid hydrogen and helium
+                        And the inner mantle is composed of hydrogen with metallic properties and a rocky core
+                        2 times the world</p>
+                </div>
+                <model-viewer src="assets/Jupiter.glb" alt="VR Headset" auto-rotate camera-controls ar
+                    ios-src="assets/Jupiter.glb"
+                    style="width: 600px; height: 600px; filter: saturate(150%);"></model-viewer>
+            </div>
+            <div class="info-solar">
+                <div>
+                    <h6>diameter (Diameter)</h6>
+                    <p>142,984 kilometers</p>
+                </div>
+                <div>
+                    <h6>the mass<br>(Mass)</h6>
+                    <p>1.90E27 million kilograms</p>
+                </div>
+                <div>
+                    <h6>Number of moons (Satellite)</h6>
+                    <p>39 horoscope</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-solar" id="saturn">
+        <div class="content-saturn">
+            <p></p>
+        </div>
+        <div>
+            <div class="card-solar">
+                <div class="text-solar">
+                    <h3>Saturn</h3>
+                    <h1>Saturn</h1>
+                    <p>The planets have been known since prehistoric times
+                        Galileo observed Saturn with a telescope for the first time in the year B.E. 2153</p>
+                    <p>Saturn was explored by Pioneer 11 in 2522 followed by Voyager 1 Voyager 2
+                        and Cassini in 2547 Saturn's atmosphere is 75% hydrogen, 25% helium, and 25% methane.
+                        A small amount of ammonia causes Saturn's very fast rotation
+                        until it causes the rotation of the atmosphere with different temperatures, so it appears as dark and light bands alternately
+                        The internal structure of Saturn is similar to that of Jupiter Has a rock solid core
+                        Encased in the mantle is metallic hydrogen and the outer mantle which is liquid hydrogen and helium</p>
+                </div>
+                <model-viewer src="assets/Saturn.glb" alt="VR Headset" auto-rotate camera-controls ar
+                    ios-src="assets/Saturn.glb"
+                    style="width: 600px; height: 600px; filter: saturate(150%); transform: rotate(-20deg);"></model-viewer>
+            </div>
+            <div class="info-solar">
+                <div>
+                    <h6>diameter (Diameter)</h6>
+                    <p>120,536 kilometers</p>
+                </div>
+                <div>
+                    <h6>มวล<br>(Mass)</h6>
+                    <p>5.69E25 million kg</p>
+                </div>
+                <div>
+                    <h6>Number of moons (Satellite)</h6>
+                    <p>30 horoscope</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-solar" id="uranus">
+        <div class="content-uranus">
+            <p></p>
+        </div>
+        <div>
+            <div class="card-solar">
+                <div class="text-solar">
+                    <h3>Uranus</h3>
+                    <h1>Uranus</h1>
+                    <p> First discovered by William Hoeschel in 2534 Two hundred years later Voyager 2
+                        Explore Uranus in the year B.E. 2529 found that the atmosphere of Uranus consists of hydrogen 83%, Helium
+                        15% Methane 2% Uranus is blue because the gas methane absorbs red and reflects blue
+                        The atmosphere is very windy deep in the core of the star enveloped in liquid metallic hydrogen</p>
+                    <p>While most of the planets have their axis of rotation almost perpendicular to the Sun's orbit
+                        But the axis of Uranus lies almost parallel to the Sun
+                        Therefore, the temperature at the poles is higher than at the equator
+                        Uranus has rings like other exoplanets. Uranus rings are not very bright
+                        As it consists of small particles ranging in size from dust to powder 10 meters
+                        Uranus has at least 27 moons including large spherical moons
+                        Miranda Ariel Umbriel Titania and Oberon</p>
+                </div>
+                <model-viewer src="assets/Uranus.glb" alt="VR Headset" auto-rotate camera-controls ar
+                    ios-src="assets/Uranus.glb"
+                    style="width: 600px; height: 600px; filter: saturate(150%); transform: rotate(-20deg);"></model-viewer>
+            </div>
+            <div class="info-solar">
+                <div>
+                    <h6>diameter (Diameter)</h6>
+                    <p>51,118 kilometers</p>
+                </div>
+                <div>
+                    <h6>the mass<br>(Mass)</h6>
+                    <p>8.86E25 million kg</p>
+                </div>
+                <div>
+                    <h6>Number of moons (Satellite)</h6>
+                    <p>21 horoscope</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-solar" id="neptune">
+        <div class="content-neptune">
+            <p></p>
+        </div>
+        <div>
+            <div class="card-solar">
+                <div class="text-solar">
+                    <h3>Napture</h3>
+                    <h1>Neptune</h1>
+                    <p> was discovered because astronomers found
+                        The position of Uranus in its orbit around the sun is not according to Newton's law, so it is assumed that
+                        There must be another planet further out to disturb the orbit of Uranus
+                        Neptune was finally discovered by Johann Galle in 2389.</p>
+                    <p>Neptune has a similar composition to Uranus in that it has an atmosphere of hydrogen and helium
+                        and contains methane so it is blue.Neptune is slightly smaller than Uranus
+                       but denser, with Neptune's solid core about the same size as our Earth
+                        During Voyager 2's approach to Neptune, it photographed the Great Dark Spot.
+                        The southern hemisphere is almost half the size of the Great Red Spot on Jupiter
+                        (Approximately equal to the diameter of the Earth)
+                        The Great Dark Spot is a vortex, like the Great Red Spot on Jupiter, with the strongest winds in the Solar System.
+                        Wind speed is 300 m/s or 1,080 km/h </p>
+                </div>
+                <model-viewer src="assets/Neptune.glb" alt="VR Headset" auto-rotate camera-controls ar
+                    ios-src="assets/Neptune.glb"
+                    style="width: 600px; height: 600px; filter: saturate(150%); transform: rotate(-20deg);"></model-viewer>
+            </div>
+            <div class="info-solar">
+                <div>
+                    <h6>diameter (Diameter)</h6>
+                    <p>49,528 kilometers</p>
+                </div>
+                <div>
+                    <h6>the mass<br>(Mass)</h6>
+                    <p>1.02E25 million kg</p>
+                </div>
+                <div>
+                    <h6>Number of moons (Satellite)</h6>
+                    <p>8 horoscope</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ref">
+        <h1>The source</h1>
+        <span>
+            <p>3D Model all :</p>
+            <a
+                href="https://solarsystem.nasa.gov/resources/all/?order=pub_date+desc&per_page=50&page=0&search=&condition_1=1%3Ais_in_resource_list&fs=&fc=&ft=&dp=&category=">solarsystem.nasa.gov</a>
+        </span>
+        <span>
+            <p>Some background images :</p>
+            <a href="https://pixabay.com/th/">pixabay.com</a>
+        </span>
+        <span>
+            <p>Image textures of stars and backgrounds :</p>
+            <a href="https://www.solarsystemscope.com/textures/">solarsystemscope.com</a>
+        </span>
+        <span>
+            <p>All information :</p>
+            <a href="http://www.lesa.biz/astronomy/solar-system">lesa.biz</a>
+        </span>
+    </section>
+
+    <footer>
+        <p style="color: grey;">Designed & Built by Pannisa Samerjai</p>
+    </footer>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+</body>
+
+</html>
